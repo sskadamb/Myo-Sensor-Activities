@@ -1,4 +1,4 @@
-function [activity_1] = newFeatureExtraction(t1,t2,t3,t4,t5);
+function [activity_1, variance_orient] = newFeatureExtraction(t1,t2,t3,t4,t5);
 
 %t1 = csvread('../Project/Data/EatFood1/orientation-1533862083.csv', 1, 1);
 
@@ -60,6 +60,8 @@ fft_emg_5 = fft_emg(:,5);
 fft_emg_6 = fft_emg(:,6);
 fft_emg_7 = fft_emg(:,7);
 fft_emg_8 = fft_emg(:,8);
-activity_1 = [rms_orientation, rms_gyro, rms_orientioneu, rms_acc, rms_emg, std_orientation, std_gyro, std_orientioneu, std_acc, std_emg, mean_oriention, mean_gyro, mean_orientioneu, mean_acc, mean_emg, var_oriention, var_gyro, var_orientioneu, var_acc, var_emg, fft_orien_x', fft_orien_y', fft_orien_z', fft_orien_w', fft_gyro_x', fft_gyro_y', fft_gyro_z', fft_orientioneu_roll', fft_orientioneu_pitch', fft_orientioneu_yaw', fft_acc_x', fft_acc_y',fft_acc_z', fft_emg_1',fft_emg_2', fft_emg_3', fft_emg_4', fft_emg_5', fft_emg_6', fft_emg_7',fft_emg_8' ];
+activity_1 = real([rms_orientation, rms_gyro, rms_orientioneu, rms_acc, rms_emg, std_orientation, std_gyro, std_orientioneu, std_acc, std_emg, mean_oriention, mean_gyro, mean_orientioneu, mean_acc, mean_emg, var_oriention, var_gyro, var_orientioneu, var_acc, var_emg, fft_orien_x', fft_orien_y', fft_orien_z', fft_orien_w', fft_gyro_x', fft_gyro_y', fft_gyro_z', fft_orientioneu_roll', fft_orientioneu_pitch', fft_orientioneu_yaw', fft_acc_x', fft_acc_y',fft_acc_z', fft_emg_1',fft_emg_2', fft_emg_3', fft_emg_4', fft_emg_5', fft_emg_6', fft_emg_7',fft_emg_8' ]);
+variance_orient = [var_oriention]
+%activity_1 = real([rms_orientation, rms_gyro, rms_orientioneu, rms_acc, rms_emg, std_orientation, std_gyro, std_orientioneu, std_acc, std_emg, mean_oriention, mean_gyro, mean_orientioneu, mean_acc, mean_emg, var_oriention, var_gyro, var_orientioneu, var_acc, var_emg]);
 
 
